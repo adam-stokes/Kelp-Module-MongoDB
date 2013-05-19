@@ -8,6 +8,7 @@ notifications:
   email: false
 install:
   - "sudo apt-get install mongodb-10gen"
+  - "sudo service mongodb start"
   - "cpanm --notest Dist::Zilla"
   - "dzil authordeps | cpanm --notest"
   - "dzil listdeps | cpanm --notest"
