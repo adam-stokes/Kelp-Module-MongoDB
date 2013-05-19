@@ -3,10 +3,10 @@ Kelp-Module-MongoDB
 
 [![Build Status](https://travis-ci.org/battlemidget/Kelp-Module-MongoDB.png?branch=master)](https://travis-ci.org/battlemidget/Kelp-Module-MongoDB)
 
-NAME
+### NAME
       Kelp::Module::MongoDB - Use MongoDB within Kelp
 
-SYNOPSIS
+### SYNOPSIS
     First ...
 
         # conf/config.pl
@@ -33,13 +33,13 @@ SYNOPSIS
             my $data       = $collection->find_one({_id => $id});
         }
 
-REGISTERED METHODS
+### REGISTERED METHODS
     This module registers only one method into the application: `mongodb'.
     It is an instance of a MongoDB class.
 
-  AUTHOR
+### AUTHOR
     Adam Stokes <adam.stokes@ubuntu.com>
 
-  LICENCE
+### LICENCE
     Perl
 
