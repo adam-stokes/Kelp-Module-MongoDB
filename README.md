@@ -1,45 +1,60 @@
-Kelp-Module-MongoDB
-===================
+# NAME
 
-[![Build Status](https://travis-ci.org/battlemidget/Kelp-Module-MongoDB.png?branch=master)](https://travis-ci.org/battlemidget/Kelp-Module-MongoDB)
+Kelp::Module::MongoDB - Use MongoDB within Kelp
 
-### NAME
-      Kelp::Module::MongoDB - Use MongoDB within Kelp
+# DESCRIPTION
 
-### SYNOPSIS
-    First ...
+[Kelp::Module::MongoDB](http://search.cpan.org/perldoc?Kelp::Module::MongoDB) is a [Kelp](http://search.cpan.org/perldoc?Kelp) plugin.
 
-        # conf/config.pl
-      {
-            modules      => ['MongoDB'],
-            modules_init => {
-                MongoDB => {
-                    host => 'localhost',           # example
-                    port => 27017,                 # example
-                }
-            }
-        }
+# SYNOPSIS
 
-    Then ...
+First ...
 
-        package MyApp;
-        use Kelp::Base 'Kelp';
+      # conf/config.pl
+    {
+          modules      => ['MongoDB'],
+          modules_init => {
+              MongoDB => {
+                  host => 'localhost',           # example
+                  port => 27017,                 # example
+              }
+          }
+      }
 
-        sub some_route {
-            my $self       = shift;
-            my $db         = $self->mongodb->get_database('foodb');
-            my $collection = $db->get_collection('bar');
-            my $id         = $collection->insert({some => 'data'});
-            my $data       = $collection->find_one({_id => $id});
-        }
+Then ...
 
-### REGISTERED METHODS
-    This module registers only one method into the application: `mongodb'.
-    It is an instance of a MongoDB class.
+    package MyApp;
+    use Kelp::Base 'Kelp';
 
-### AUTHOR
-    Adam Stokes <adam.stokes@ubuntu.com>
+    sub some_route {
+        my $self       = shift;
+        my $db         = $self->mongodb->get_database('foodb');
+        my $collection = $db->get_collection('bar');
+        my $id         = $collection->insert({some => 'data'});
+        my $data       = $collection->find_one({_id => $id});
+    }
 
-### LICENCE
-    Perl
 
+
+
+
+# METHODS
+
+This module registers only one method into the application: `mongodb`.
+It is an instance of a [MongoDB](http://search.cpan.org/perldoc?MongoDB) class.
+
+# AUTHOR
+
+Adam Stokes <adamjs@cpan.org>
+
+# COPYRIGHT
+
+Copyright 2013- Adam Stokes
+
+# LICENSE
+
+Licensed under the same terms as Perl.
+
+# SEE ALSO
+
+[Kelp](http://search.cpan.org/perldoc?Kelp).

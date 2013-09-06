@@ -1,0 +1,6 @@
+Revision history for Kelp-Module-MongoDB
+
+{{$NEXT}}
+	- Cleanup module
+  - Use milla
+  - Verify dependency list
